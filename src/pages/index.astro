@@ -214,27 +214,46 @@ const programContoh = [
     </section>
 
     <!-- THANK YOU / CTA -->
-    <section id="kontak" class="relative min-h-[80vh] flex items-center justify-center py-24 px-8 text-white overflow-hidden text-center z-10">
-      <!-- Rainbow/Nature Background -->
-      <div class="absolute inset-0 -z-20">
-        <img src="https://images.unsplash.com/photo-1498036882173-b41c28af5cb9?auto=format&fit=crop&q=80&w=1600" alt="Rainbow landscape" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+    <section id="kontak" class="relative min-h-[80vh] flex items-center justify-center py-32 px-8 bg-[var(--color-primary)] text-white overflow-hidden text-center z-10">
+      <!-- Brand Color Background Accents -->
+      <div class="absolute inset-0 -z-10 opacity-20 pointer-events-none">
+        <div class="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[var(--color-secondary)] blur-[100px] animate-[var(--animate-anti-gravity-slow)]"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-black blur-[100px]"></div>
       </div>
       
-      <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out max-w-2xl bg-black/20 p-12 rounded-3xl backdrop-blur-md border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
-        <h2 class="text-7xl md:text-9xl font-bold uppercase tracking-widest mb-12 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] animate-[var(--animate-anti-gravity)]">
+      <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out max-w-4xl mx-auto w-full">
+        <h2 class="text-6xl md:text-8xl font-bold uppercase tracking-widest mb-16 text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] animate-[var(--animate-anti-gravity)]">
           Thank You
         </h2>
         
-        <div class="space-y-3 text-xl md:text-2xl drop-shadow-md tracking-wide">
-          <p class="font-bold text-2xl md:text-3xl mb-6">KONTAK</p>
-          <p class="font-semibold text-3xl mb-2">PT POTENSIA MITRA INSANI</p>
-          <p>Jl. Cendrawasih Komp. Diknas P&K</p>
-          <p>Blok.A no.5 Rt.005 Rw.006</p>
-          <p>Cipayung - Ciputat</p>
-          <p>Tangerang Selatan</p>
-          <p class="mt-6 text-[var(--color-secondary)] font-bold text-3xl drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:scale-105 transition-transform inline-block">~ 0817.987.0512 ~</p>
-          <p class="text-2xl">potensiamitrainsani@gmail.com</p>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.3)]">
+          <p class="font-bold text-2xl md:text-3xl text-[var(--color-secondary)] tracking-widest mb-10 uppercase">Hubungi Kami</p>
+          
+          <div class="space-y-3 text-xl md:text-2xl text-gray-200 tracking-wide mb-14">
+            <p class="font-bold text-3xl md:text-4xl mb-6 text-white">PT POTENSIA MITRA INSANI</p>
+            <p>Jl. Cendrawasih Komp. Diknas P&amp;K</p>
+            <p>Blok A No. 5 RT. 005 / RW. 006</p>
+            <p>Cipayung - Ciputat</p>
+            <p>Tangerang Selatan</p>
+          </div>
+          
+          <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/628179870512" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-4 bg-[#25D366] hover:bg-[#1ebf5b] text-white px-8 py-4 rounded-full text-xl md:text-2xl font-bold shadow-lg hover:shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:-translate-y-1 transition-all duration-300 w-full md:w-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10 fill-current group-hover:scale-110 transition-transform">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+              </svg>
+              0817 987 0512
+            </a>
+            
+            <!-- Email Button -->
+            <a href="mailto:potensiamitrainsani@gmail.com" class="group flex items-center justify-center gap-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full text-xl md:text-2xl font-bold shadow-lg hover:-translate-y-1 transition-all duration-300 w-full md:w-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 md:w-10 md:h-10 group-hover:scale-110 transition-transform">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+              Kirim Email
+            </a>
+          </div>
         </div>
       </div>
     </section>
