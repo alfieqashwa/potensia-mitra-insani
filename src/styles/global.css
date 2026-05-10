@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1e3a1f; /* Dark Green - METODA PELAKSANAAN */
+  --color-secondary: #528c3d; /* Bright Green - badges and bullets */
+  --color-accent: #3a6b2c; /* Medium Green */
+  --color-background: #f4f6f4; /* Light gray-green background */
+  --color-surface: #ffffff; /* White card backgrounds */
+  --color-text: #333333; /* Dark gray for standard text */
+  --color-text-muted: #666666; /* Gray for muted text */
+  
+  --font-heading: 'Oswald', 'Impact', sans-serif; /* Bold condensed for headers */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif; /* Clean body text */
+  
+  --animate-anti-gravity: anti-gravity 4s ease-in-out infinite;
+  --animate-anti-gravity-slow: anti-gravity 6s ease-in-out infinite;
+  --animate-anti-gravity-fast: anti-gravity 3s ease-in-out infinite;
+  --animate-anti-gravity-reverse: anti-gravity-reverse 5s ease-in-out infinite;
+  
+  @keyframes anti-gravity {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-12px) rotate(1deg);
+    }
+  }
+  
+  @keyframes anti-gravity-reverse {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(10px) rotate(-1deg);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
