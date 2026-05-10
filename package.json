@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">=22.12.0"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "astro dev",
@@ -19,3 +19,4 @@
     "tailwindcss": "^4.3.0"
   }
 }
+
