@@ -1,23 +1,76 @@
 ---
+import Fingerprint from "./Fingerprint.astro";
 ---
-<section id="beranda" class="relative min-h-screen flex flex-col items-center justify-center p-8 overflow-hidden z-10 pt-24">
-  <!-- Abstract Background Elements -->
-  <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-br from-[var(--color-secondary)] to-transparent opacity-10 blur-3xl animate-[var(--animate-anti-gravity-slow)] -z-10"></div>
-  <div class="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-gradient-to-tl from-[var(--color-primary)] to-transparent opacity-10 blur-3xl animate-[var(--animate-anti-gravity-reverse)] -z-10"></div>
+<section id="beranda" class="relative min-h-screen flex items-center overflow-hidden z-10">
+  <!-- Deep ambient background -->
+  <div class="absolute inset-0 bg-[var(--color-background)] -z-20"></div>
+  
+  <!-- Radial glow orbs -->
+  <div class="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-[var(--color-secondary)] to-transparent opacity-[0.04] blur-[100px] animate-[var(--animate-anti-gravity-slow)] -z-10"></div>
+  <div class="absolute bottom-[-25%] right-[-15%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tl from-[var(--color-emerald-glow)] to-transparent opacity-[0.03] blur-[120px] animate-[var(--animate-anti-gravity-reverse)] -z-10"></div>
+  
+  <!-- Ambient dots -->
+  <div class="ambient-dot" style="top: 15%; left: 8%; animation-delay: 0s;"></div>
+  <div class="ambient-dot" style="top: 45%; left: 20%; animation-delay: 2s;"></div>
+  <div class="ambient-dot" style="top: 70%; left: 12%; animation-delay: 4s;"></div>
+  <div class="ambient-dot" style="top: 25%; right: 25%; animation-delay: 1s;"></div>
+  <div class="ambient-dot" style="top: 60%; right: 8%; animation-delay: 3s;"></div>
+  <div class="ambient-dot" style="top: 80%; right: 18%; animation-delay: 5s;"></div>
 
-  <!-- Animated Logo Container -->
-  <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out mb-12 mt-16 md:mt-0 animate-[var(--animate-anti-gravity)] z-20">
-    <div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-transparent rounded-full hover:scale-105 transition-transform duration-500">
-      <img src="/logo.png" alt="Logo PT Potensia Mitra Insani" class="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(30,58,31,0.4)]" />
+  <!-- Content: Split layout -->
+  <div class="max-w-[1400px] mx-auto w-full px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+    
+    <!-- Left: Text Content -->
+    <div class="order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+      <!-- Logo -->
+      <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out mb-8">
+        <div class="w-32 h-32 md:w-40 md:h-40 animate-[var(--animate-anti-gravity)]">
+          <img src="/logo.png" alt="Logo PT Potensia Mitra Insani" class="w-full h-full object-contain drop-shadow-[0_10px_30px_rgba(74,222,128,0.15)]" />
+        </div>
+      </div>
+
+      <!-- Headline -->
+      <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold uppercase tracking-tight mb-6 leading-[0.95]">
+          <span class="block text-[var(--color-text)]">Potensia</span>
+          <span class="block text-gradient">Mitra Insani</span>
+        </h1>
+      </div>
+
+      <!-- Tagline -->
+      <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 delay-400 ease-out">
+        <p class="text-base md:text-xl lg:text-2xl text-[var(--color-text-muted)] max-w-xl leading-relaxed mb-10">
+          Menggali potensi, membangun masa depan dengan pendekatan terukur, aplikatif, dan berkelanjutan.
+        </p>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 delay-500 ease-out flex flex-wrap gap-4 justify-center lg:justify-start">
+        <a href="#kontak" class="magnetic-btn gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+          </svg>
+          Hubungi Kami
+        </a>
+        <a href="#portofolio" class="magnetic-btn !bg-transparent !border !border-[var(--color-glass-border-hover)] hover:!bg-[rgba(74,222,128,0.08)] !text-[var(--color-emerald-glow)]">
+          Lihat Portfolio
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Fingerprint Scanner -->
+    <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+      <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 delay-300 ease-out">
+        <Fingerprint />
+      </div>
     </div>
   </div>
 
-  <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out text-center max-w-5xl">
-    <h1 class="text-5xl md:text-7xl lg:text-9xl font-bold uppercase tracking-tight text-[var(--color-primary)] mb-8 drop-shadow-sm">
-      Potensia Mitra Insani
-    </h1>
-    <p class="text-lg md:text-2xl lg:text-3xl text-[var(--color-text-muted)] max-w-3xl mx-auto font-medium leading-relaxed">
-      Menggali potensi, membangun masa depan dengan pendekatan terukur, aplikatif, dan berkelanjutan.
-    </p>
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
+    <span class="text-xs tracking-[0.3em] uppercase text-[var(--color-text-muted)]">Scroll</span>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-[var(--color-emerald-glow)]">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+    </svg>
   </div>
 </section>

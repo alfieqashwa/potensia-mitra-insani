@@ -1,0 +1,217 @@
+---
+---
+<div class="fingerprint-container" id="fingerprint-hero">
+  <!-- Scan Beam -->
+  <div class="scan-beam" id="scan-beam"></div>
+  
+  <!-- Success Pulse Ring -->
+  <div class="success-pulse" id="success-pulse"></div>
+  
+  <!-- SVG Fingerprint with emerald-green glowing paths -->
+  <svg
+    class="fingerprint-svg"
+    id="fingerprint-svg"
+    viewBox="0 0 200 240"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+  >
+    <!-- Outer arches -->
+    <path d="M40 180 C40 80, 160 80, 160 180" stroke-dasharray="6 3" />
+    <path d="M48 175 C48 90, 152 90, 152 175" stroke-dasharray="5 4" />
+    <path d="M56 170 C56 95, 144 95, 144 170" />
+    <path d="M62 168 C62 100, 138 100, 138 168" stroke-dasharray="8 3" />
+    
+    <!-- Mid arches -->
+    <path d="M68 165 C68 105, 132 105, 132 165" />
+    <path d="M74 162 C74 108, 126 108, 126 162" stroke-dasharray="4 3" />
+    <path d="M78 160 C78 112, 122 112, 122 160" />
+    <path d="M84 158 C84 115, 116 115, 116 158" stroke-dasharray="6 2" />
+    
+    <!-- Inner loops -->
+    <path d="M88 155 C88 120, 112 120, 112 155" />
+    <path d="M92 152 C92 125, 108 125, 108 152" stroke-dasharray="3 3" />
+    <path d="M96 148 C96 128, 104 128, 104 148" />
+    
+    <!-- Core whorl -->
+    <path d="M100 132 C94 132, 92 140, 100 142 C108 142, 108 132, 100 132" />
+    <path d="M100 136 C97 136, 96 139, 100 140 C104 140, 103 136, 100 136" />
+    
+    <!-- Descending ridges left -->
+    <path d="M44 178 C44 178, 42 200, 50 220" stroke-dasharray="5 4" />
+    <path d="M56 172 C54 185, 52 200, 58 218" />
+    <path d="M68 168 C65 180, 62 195, 66 215" stroke-dasharray="6 3" />
+    <path d="M78 164 C76 175, 73 192, 76 210" />
+    
+    <!-- Descending ridges right -->
+    <path d="M156 178 C156 178, 158 200, 150 220" stroke-dasharray="4 3" />
+    <path d="M144 172 C146 185, 148 200, 142 218" />
+    <path d="M132 168 C135 180, 138 195, 134 215" stroke-dasharray="5 4" />
+    <path d="M122 164 C124 175, 127 192, 124 210" />
+    
+    <!-- Extra detail arches for density -->
+    <path d="M52 172 C52 92, 148 92, 148 172" stroke-dasharray="3 5" opacity="0.5" />
+    <path d="M72 163 C72 106, 128 106, 128 163" stroke-dasharray="2 4" opacity="0.5" />
+    <path d="M86 156 C86 118, 114 118, 114 156" opacity="0.5" />
+    
+    <!-- Top connecting ridges -->
+    <path d="M60 95 C75 75, 125 75, 140 95" stroke-dasharray="4 3" />
+    <path d="M70 92 C82 78, 118 78, 130 92" />
+    <path d="M80 90 C88 82, 112 82, 120 90" stroke-dasharray="3 4" />
+  </svg>
+  
+  <!-- Metrics overlay (hidden until scan completes) -->
+  <div class="metrics-overlay" id="metrics-overlay">
+    <div class="metric-item metric-item-1">
+      <span class="metric-value text-2xl md:text-3xl font-bold text-[var(--color-emerald-glow)]">500+</span>
+      <span class="text-xs md:text-sm text-[var(--color-text-muted)] uppercase tracking-widest">Peserta</span>
+    </div>
+    <div class="metric-item metric-item-2">
+      <span class="metric-value text-2xl md:text-3xl font-bold text-[var(--color-emerald-glow)]">50+</span>
+      <span class="text-xs md:text-sm text-[var(--color-text-muted)] uppercase tracking-widest">Institusi</span>
+    </div>
+    <div class="metric-item metric-item-3">
+      <span class="metric-value text-2xl md:text-3xl font-bold text-[var(--color-emerald-glow)]">100%</span>
+      <span class="text-xs md:text-sm text-[var(--color-text-muted)] uppercase tracking-widest">Terukur</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .fingerprint-container {
+    width: 320px;
+    height: 380px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+  }
+
+  @media (min-width: 768px) {
+    .fingerprint-container {
+      width: 400px;
+      height: 460px;
+    }
+  }
+
+  .fingerprint-svg {
+    filter: drop-shadow(0 0 20px rgba(74, 222, 128, 0.15));
+  }
+
+  .fingerprint-svg path {
+    stroke: var(--color-emerald-glow);
+    stroke-width: 0.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 3px rgba(74, 222, 128, 0.3));
+    opacity: 0.45;
+    transition: opacity 0.8s ease, filter 0.8s ease;
+  }
+
+  .fingerprint-svg.scanned path {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.6));
+  }
+
+  .scan-beam {
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    right: -5%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(74, 222, 128, 0.05) 10%,
+      rgba(74, 222, 128, 0.8) 50%,
+      rgba(74, 222, 128, 0.05) 90%,
+      transparent 100%
+    );
+    box-shadow:
+      0 0 15px rgba(74, 222, 128, 0.4),
+      0 0 50px rgba(74, 222, 128, 0.15);
+    will-change: transform;
+    animation: scanSweep 3.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .success-pulse {
+    position: absolute;
+    inset: -20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .success-pulse.active {
+    animation: pulseSuccess 1.5s ease-out forwards;
+  }
+
+  @keyframes scanSweep {
+    0% { transform: translateY(0); opacity: 0.5; }
+    10% { opacity: 1; }
+    50% { transform: translateY(460px); opacity: 1; }
+    60% { opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 0.5; }
+  }
+
+  @keyframes pulseSuccess {
+    0% {
+      border-color: rgba(74, 222, 128, 0.8);
+      transform: scale(0.9);
+      opacity: 1;
+    }
+    100% {
+      border-color: rgba(74, 222, 128, 0);
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+
+  /* Metrics overlay */
+  .metrics-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .metrics-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    background: rgba(10, 15, 10, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(74, 222, 128, 0.15);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .metrics-overlay.visible .metric-item {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .metrics-overlay.visible .metric-item-1 { transition-delay: 0.1s; }
+  .metrics-overlay.visible .metric-item-2 { transition-delay: 0.3s; }
+  .metrics-overlay.visible .metric-item-3 { transition-delay: 0.5s; }
+</style>

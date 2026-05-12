@@ -13,20 +13,21 @@ import Kontak from "../components/Kontak.astro";
 <html lang="id">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Potensia Mitra Insani</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Potensia Mitra Insani — Menggali Potensi, Membangun Masa Depan</title>
+    <meta name="description" content="PT Potensia Mitra Insani — Menggali potensi, membangun masa depan dengan pendekatan terukur, aplikatif, dan berkelanjutan. Asesmen, pelatihan SDM, dan pengembangan individu." />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta property="og:image" content="/logo.png" />
+    <meta property="og:title" content="Potensia Mitra Insani" />
+    <meta property="og:description" content="Menggali potensi, membangun masa depan dengan pendekatan terukur, aplikatif, dan berkelanjutan." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body
-    class="bg-[var(--color-background)] text-[var(--color-text)] overflow-x-hidden antialiased"
-  >
+  <body>
     <Navigation />
     <Hero />
     <Metodologi />
@@ -35,17 +36,16 @@ import Kontak from "../components/Kontak.astro";
     <Tim />
     <Kontak />
 
-    <!-- Interactive Anti-Gravity Logic & Reveal Animation -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Scroll Reveal Logic
+        // ═══════════════════════════════════════
+        // 1. SCROLL REVEAL — .reveal elements
+        // ═══════════════════════════════════════
         const reveals = document.querySelectorAll(".reveal");
-
-        const observer = new IntersectionObserver(
+        const revealObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                // Reset translate and opacity
                 entry.target.classList.remove(
                   "opacity-0",
                   "translate-y-10",
@@ -62,17 +62,45 @@ import Kontak from "../components/Kontak.astro";
               }
             });
           },
-          {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px",
-          }
+          { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
         );
+        reveals.forEach((el) => revealObserver.observe(el));
 
-        reveals.forEach((reveal) => {
-          observer.observe(reveal);
-        });
+        // ═══════════════════════════════════════
+        // 2. HEADER REVEAL — clip-path animation
+        // ═══════════════════════════════════════
+        const headers = document.querySelectorAll(".reveal-header");
+        const headerObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+        headers.forEach((el) => headerObserver.observe(el));
 
-        // Navigation Highlight Logic
+        // ═══════════════════════════════════════
+        // 3. CARD ENTRY PHYSICS — .card-entry
+        // ═══════════════════════════════════════
+        const cards = document.querySelectorAll(".card-entry");
+        const cardObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("entered");
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
+        );
+        cards.forEach((el) => cardObserver.observe(el));
+
+        // ═══════════════════════════════════════
+        // 4. NAVIGATION HIGHLIGHT
+        // ═══════════════════════════════════════
         const sections = document.querySelectorAll("section[id]");
         const navLinks = document.querySelectorAll(".nav-link");
 
@@ -82,45 +110,100 @@ import Kontak from "../components/Kontak.astro";
               if (entry.isIntersecting) {
                 const id = entry.target.getAttribute("id");
                 navLinks.forEach((link) => {
-                  link.classList.remove(
-                    "bg-[var(--color-primary)]",
-                    "text-white",
-                    "shadow-md",
-                    "scale-105"
-                  );
-                  link.classList.add("text-[var(--color-text-muted)]");
-                  if (link.getAttribute("href") === `#${id}`) {
-                    link.classList.remove("text-[var(--color-text-muted)]");
-                    link.classList.add(
-                      "bg-[var(--color-primary)]",
-                      "text-white",
-                      "shadow-md",
-                      "scale-105"
-                    );
+                  const anchor = link as HTMLAnchorElement;
+                  anchor.classList.remove("!text-[var(--color-emerald-glow)]", "!bg-[rgba(74,222,128,0.1)]");
+                  if (anchor.getAttribute("href") === `#${id}`) {
+                    anchor.classList.add("!text-[var(--color-emerald-glow)]", "!bg-[rgba(74,222,128,0.1)]");
                   }
                 });
               }
             });
           },
-          {
-            threshold: 0.2,
-            rootMargin: "-20% 0px -40% 0px",
-          }
+          { threshold: 0.2, rootMargin: "-20% 0px -40% 0px" }
         );
-
         sections.forEach((sec) => navObserver.observe(sec));
 
-        // Anti-gravity cursor effect (subtle parallax)
-        const cards = document.querySelectorAll(
-          ".hover\\:shadow-\\[0_20px_60px_rgba\\(82\\,140\\,61\\,0\\.4\\)\\]"
-        );
+        // ═══════════════════════════════════════
+        // 5. MAGNETIC BUTTON EFFECT
+        // ═══════════════════════════════════════
+        const magneticBtns = document.querySelectorAll(".magnetic-btn");
+        magneticBtns.forEach((btn) => {
+          const el = btn as HTMLElement;
+          
+          el.addEventListener("mousemove", (e: MouseEvent) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            const pullStrength = 0.3;
+            el.style.transform = `translate(${x * pullStrength}px, ${y * pullStrength}px)`;
+          });
+
+          el.addEventListener("mouseleave", () => {
+            el.style.transform = "translate(0, 0)";
+          });
+        });
+
+        // ═══════════════════════════════════════
+        // 6. FINGERPRINT SCAN TRIGGER
+        // ═══════════════════════════════════════
+        const fingerprintEl = document.getElementById("fingerprint-hero");
+        const fingerprintSvg = document.getElementById("fingerprint-svg");
+        const metricsOverlay = document.getElementById("metrics-overlay");
+        const successPulse = document.getElementById("success-pulse");
+        let scanTriggered = false;
+
+        if (fingerprintEl) {
+          // Trigger on scroll into view
+          const fpObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && !scanTriggered) {
+                  triggerScan();
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+          fpObserver.observe(fingerprintEl);
+
+          // Also trigger on hover
+          fingerprintEl.addEventListener("mouseenter", () => {
+            if (!scanTriggered) {
+              triggerScan();
+            }
+          });
+        }
+
+        function triggerScan() {
+          scanTriggered = true;
+          
+          // After scan beam completes first pass (~1.75s = half of 3.5s animation)
+          setTimeout(() => {
+            // Light up fingerprint
+            fingerprintSvg?.classList.add("scanned");
+            
+            // Fire success pulse
+            successPulse?.classList.add("active");
+            
+            // Show metrics
+            setTimeout(() => {
+              metricsOverlay?.classList.add("visible");
+            }, 400);
+          }, 1750);
+        }
+
+        // ═══════════════════════════════════════
+        // 7. SUBTLE PARALLAX ON GLASS PANELS
+        // ═══════════════════════════════════════
+        const glassPanels = document.querySelectorAll(".glass-panel");
         document.addEventListener("mousemove", (e) => {
-          const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-          const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
-          cards.forEach((card) => {
-            (
-              card as HTMLElement
-            ).style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+          const xFactor = (window.innerWidth / 2 - e.clientX) / 120;
+          const yFactor = (window.innerHeight / 2 - e.clientY) / 120;
+          glassPanels.forEach((panel) => {
+            const el = panel as HTMLElement;
+            if (el.closest("#metodologi") || el.closest("#portofolio")) {
+              el.style.transform = `perspective(1000px) rotateY(${xFactor * 0.3}deg) rotateX(${yFactor * 0.3}deg)`;
+            }
           });
         });
       });

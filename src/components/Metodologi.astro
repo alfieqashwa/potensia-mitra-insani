@@ -1,40 +1,95 @@
 ---
 const metodologi = [
-  { step: 'PERSIAPAN PROGRAM', text: 'Koordinasi dengan pihak institusi untuk menentukan tujuan kegiatan, jumlah peserta, serta kebutuhan khusus yang ingin dicapai.' },
-  { step: 'PELAKSANAAN ASESMEN', text: 'Proses pengumpulan data dilakukan sesuai prosedur layanan dengan pendampingan dari tim profesional.' },
-  { step: 'PENGOLAHAN & ANALISIS', text: 'Data yang diperoleh dianalisis menggunakan pendekatan terukur untuk menghasilkan gambaran potensi dan karakter individu.' },
-  { step: 'PENYAMPAIAN HASIL & REKOMENDASI', text: 'Hasil pemetaan disajikan dalam bentuk laporan yang informatif serta dilengkapi arahan pengembangan yang dapat diterapkan oleh institusi' }
+  { step: 'PERSIAPAN PROGRAM', text: 'Koordinasi dengan pihak institusi untuk menentukan tujuan kegiatan, jumlah peserta, serta kebutuhan khusus yang ingin dicapai.', icon: '📋' },
+  { step: 'PELAKSANAAN ASESMEN', text: 'Proses pengumpulan data dilakukan sesuai prosedur layanan dengan pendampingan dari tim profesional.', icon: '🔬' },
+  { step: 'PENGOLAHAN & ANALISIS', text: 'Data yang diperoleh dianalisis menggunakan pendekatan terukur untuk menghasilkan gambaran potensi dan karakter individu.', icon: '📊' },
+  { step: 'PENYAMPAIAN HASIL & REKOMENDASI', text: 'Hasil pemetaan disajikan dalam bentuk laporan yang informatif serta dilengkapi arahan pengembangan yang dapat diterapkan oleh institusi', icon: '📑' }
+];
+
+const layanan = [
+  { title: 'Asesmen Potensi', desc: 'Pemetaan kemampuan kognitif, minat, dan karakter individu secara komprehensif.', size: 'bento-wide' },
+  { title: 'Pelatihan SDM', desc: 'Program pengembangan kompetensi yang terukur dan aplikatif.', size: '' },
+  { title: 'Workshop Karir', desc: 'Perencanaan jalur karir berdasarkan data potensi.', size: '' },
+  { title: 'Konsultasi', desc: 'Pendampingan strategi pembinaan individu dan organisasi secara berkelanjutan.', size: 'bento-wide' },
+  { title: 'Seminar Motivasi', desc: 'Penguatan karakter dan mindset growth.', size: '' },
+  { title: 'Gaya Belajar', desc: 'Identifikasi dan pengembangan metode belajar optimal.', size: '' },
 ];
 ---
-<section id="metodologi" class="relative py-24 px-8 bg-white overflow-hidden">
-  <!-- Diagonal Split Background -->
-  <div class="absolute inset-0 bg-gradient-to-br from-[#f0f4f0] to-transparent w-[120%] h-[120%] -rotate-6 origin-top-left -z-10"></div>
+<section id="metodologi" class="relative py-24 md:py-32 px-6 md:px-12 overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-[var(--color-background-light)] -z-20"></div>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(74,222,128,0.2)] to-transparent"></div>
   
-  <div class="max-w-7xl mx-auto">
-    <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out text-center mb-20">
-      <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--color-primary)] uppercase tracking-wider mb-8 relative inline-block">
-        Metoda Pelaksanaan
-        <!-- Floating accent -->
-        <div class="absolute -top-6 -right-12 w-16 h-8 bg-[var(--color-secondary)] rounded-full opacity-20 blur-xl animate-[var(--animate-anti-gravity-fast)]"></div>
-      </h2>
-      <p class="text-lg md:text-2xl text-[var(--color-text-muted)] max-w-4xl mx-auto leading-relaxed">
-        Pelaksanaan program dilakukan melalui tahapan yang sistematis dan terstruktur guna memastikan setiap individu memperoleh hasil pemetaan yang akurat serta mudah dipahami.
-      </p>
+  <div class="max-w-[1400px] mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+        <p class="text-sm md:text-base uppercase tracking-[0.3em] text-[var(--color-emerald-glow)] mb-4 font-semibold">Metodologi</p>
+        <h2 class="reveal-header text-4xl md:text-6xl lg:text-7xl font-extrabold text-[var(--color-text)] uppercase tracking-tight mb-6">
+          Metoda <span class="text-gradient">Pelaksanaan</span>
+        </h2>
+      </div>
+      <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out">
+        <p class="text-base md:text-xl text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+          Pelaksanaan program dilakukan melalui tahapan yang sistematis dan terstruktur guna memastikan setiap individu memperoleh hasil pemetaan yang akurat serta mudah dipahami.
+        </p>
+      </div>
     </div>
 
-    <h3 class="reveal opacity-0 translate-x-10 transition-all duration-1000 ease-out text-2xl md:text-3xl font-bold text-[var(--color-primary)] mb-12 uppercase">Tahapan Kegiatan Meliputi</h3>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-      {metodologi.map((item, index) => (
-        <div class={`reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out flex flex-col group`} style={`transition-delay: ${index * 150}ms`}>
-          <div class="bg-gradient-to-r from-[#8bb95b] to-[#458032] text-white py-4 px-6 rounded-full shadow-lg mb-6 transform group-hover:-translate-y-2 group-hover:shadow-[0_10px_20px_rgba(82,140,61,0.3)] transition-all duration-300">
-            <h4 class="font-bold text-center uppercase tracking-wide text-base">{item.step}</h4>
+    <!-- Methodology Steps -->
+    <div class="mb-24">
+      <h3 class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out text-xl md:text-2xl font-bold text-[var(--color-text)] mb-10 uppercase tracking-wider text-center">
+        Tahapan Kegiatan
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {metodologi.map((item, index) => (
+          <div class="card-entry glass-panel p-6 md:p-8 group cursor-default" style={`transition-delay: ${index * 120}ms`}>
+            <div class="text-3xl mb-4">{item.icon}</div>
+            <div class="bg-gradient-to-r from-[var(--color-emerald-glow)] to-[var(--color-secondary)] text-[var(--color-background)] py-2.5 px-5 rounded-full mb-5 inline-block group-hover:shadow-[0_0_20px_rgba(74,222,128,0.2)] transition-shadow duration-300">
+              <h4 class="font-bold uppercase tracking-wide text-xs md:text-sm">{item.step}</h4>
+            </div>
+            <p class="text-[var(--color-text-muted)] text-sm md:text-base leading-relaxed">
+              {item.text}
+            </p>
+            <!-- Step number -->
+            <div class="absolute top-4 right-4 text-5xl font-black text-[var(--color-emerald-glow)] opacity-[0.06] select-none">
+              {String(index + 1).padStart(2, '0')}
+            </div>
           </div>
-          <p class="text-[var(--color-text-muted)] text-lg leading-relaxed px-4">
-            {item.text}
-          </p>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bento Grid: Our Services -->
+    <div>
+      <div class="text-center mb-12">
+        <div class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+          <p class="text-sm md:text-base uppercase tracking-[0.3em] text-[var(--color-emerald-glow)] mb-4 font-semibold">Layanan</p>
+          <h3 class="text-3xl md:text-5xl font-extrabold text-[var(--color-text)] uppercase tracking-tight">
+            Program <span class="text-gradient">Kami</span>
+          </h3>
         </div>
-      ))}
+      </div>
+
+      <div class="bento-grid">
+        {layanan.map((item, index) => (
+          <div class={`card-entry glass-panel p-6 md:p-8 group cursor-default relative overflow-hidden ${item.size}`} style={`transition-delay: ${index * 100}ms`}>
+            <!-- Inner glow on hover -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[rgba(74,222,128,0.05)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[1.25rem]"></div>
+            
+            <div class="relative z-10">
+              <h4 class="text-lg md:text-xl font-bold text-[var(--color-text)] mb-3 group-hover:text-[var(--color-emerald-glow)] transition-colors duration-300">{item.title}</h4>
+              <p class="text-sm md:text-base text-[var(--color-text-muted)] leading-relaxed">{item.desc}</p>
+            </div>
+            
+            <!-- Corner accent -->
+            <div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[rgba(74,222,128,0.08)] to-transparent rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
+  
+  <!-- Bottom divider -->
+  <div class="section-glow-line mt-24"></div>
 </section>
