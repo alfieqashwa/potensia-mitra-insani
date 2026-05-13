@@ -18,8 +18,8 @@
   --color-glass-border-hover: rgba(74, 222, 128, 0.28);
 
   /* ─── Typography ─── */
-  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-  --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-heading: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
 
   /* ─── Existing Anti-Gravity Animations ─── */
   --animate-anti-gravity: anti-gravity 4s ease-in-out infinite;
@@ -28,13 +28,23 @@
   --animate-anti-gravity-reverse: anti-gravity-reverse 5s ease-in-out infinite;
 
   @keyframes anti-gravity {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(1deg); }
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-12px) rotate(1deg);
+    }
   }
 
   @keyframes anti-gravity-reverse {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(10px) rotate(-1deg); }
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(10px) rotate(-1deg);
+    }
   }
 }
 
@@ -52,7 +62,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
 
@@ -64,7 +79,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── Text Gradient ─── */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-emerald-glow), var(--color-secondary), var(--color-emerald-dim));
+  background: linear-gradient(
+    135deg,
+    var(--color-emerald-glow),
+    var(--color-secondary),
+    var(--color-emerald-dim)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -162,14 +182,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes scanDown {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(420px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(420px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes pathGlow {
-  0% { filter: drop-shadow(0 0 4px rgba(74, 222, 128, 0.5)); }
-  100% { filter: drop-shadow(0 0 12px rgba(74, 222, 128, 0.9)); }
+  0% {
+    filter: drop-shadow(0 0 4px rgba(74, 222, 128, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 0 12px rgba(74, 222, 128, 0.9));
+  }
 }
 
 @keyframes successRing {
@@ -211,12 +241,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Stagger delays */
-.card-entry:nth-child(1) { transition-delay: 0ms; }
-.card-entry:nth-child(2) { transition-delay: 100ms; }
-.card-entry:nth-child(3) { transition-delay: 200ms; }
-.card-entry:nth-child(4) { transition-delay: 300ms; }
-.card-entry:nth-child(5) { transition-delay: 400ms; }
-.card-entry:nth-child(6) { transition-delay: 500ms; }
+.card-entry:nth-child(1) {
+  transition-delay: 0ms;
+}
+.card-entry:nth-child(2) {
+  transition-delay: 100ms;
+}
+.card-entry:nth-child(3) {
+  transition-delay: 200ms;
+}
+.card-entry:nth-child(4) {
+  transition-delay: 300ms;
+}
+.card-entry:nth-child(5) {
+  transition-delay: 400ms;
+}
+.card-entry:nth-child(6) {
+  transition-delay: 500ms;
+}
 
 /* ═══════════════════════════════════════
    BENTO GRID
@@ -264,24 +306,29 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   padding: 1rem 2.5rem;
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-accent)
+  );
   color: white;
   font-weight: 700;
   font-size: 1.125rem;
   border-radius: 9999px;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
-              box-shadow 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.3s ease;
   will-change: transform;
   overflow: hidden;
 }
 
 .magnetic-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: inherit;
@@ -312,8 +359,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ═══════════════════════════════════════
@@ -332,8 +383,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes ambientFloat {
-  0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
-  50% { opacity: 0.3; transform: translateY(-40px) scale(1); }
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-40px) scale(1);
+  }
 }
 
 /* ─── Section divider glow line ─── */
